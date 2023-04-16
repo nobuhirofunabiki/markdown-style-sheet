@@ -1,0 +1,65 @@
+.markdown-preview.markdown-preview {
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Yu Gothic', 'YuGothic', 'MS PGothic', sans-serif;
+  }
+
+  h1 {
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    color: #494949;
+    background-color: #f4f4f4;
+    border-left: solid 10px #55aa55;
+    border-bottom: solid 3px #d7d7d7;
+
+  }
+
+  h2 {
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color: #72bd72;
+    color: whitesmoke;
+    counter-increment: chapter;
+    counter-reset: section;
+  }
+
+  h2::before { 
+    content: counter(chapter) ". ";
+  }
+
+  h3 {
+    padding-left: 15px;
+    border-left: solid 20px #55aa55;
+    color: #55aa55;
+    counter-increment: section;
+    counter-reset: sub-section;
+  }
+
+  h3::before {
+    content: counter(chapter) "." counter(section) ". ";
+  }
+
+  h4 {
+    color: #494949;
+    counter-increment: sub-section;
+    counter-reset: subsub-section;
+  }
+
+  h4::before {
+    content: counter(chapter) "." counter(section) "." counter(sub-section) ". "; 
+  }
+
+  h5 {
+    color: #494949;
+    counter-increment: subsub-section;
+  }
+
+  h5::before {
+    content: counter(chapter) "." counter(section) "." counter(sub-section) "." counter(subsub-section) ". "; 
+  }
+}
